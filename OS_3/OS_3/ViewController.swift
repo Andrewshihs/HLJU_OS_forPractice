@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var EquM:EquipmentManage?
     @IBOutlet weak var SDT: UITableView!
     @IBOutlet weak var DCT: UITableView!
     @IBOutlet weak var COCT: UITableView!
@@ -30,24 +31,43 @@ class ViewController: UIViewController {
     
     @IBAction func EquAdd(_ sender: UIButton) {
         
+        if TypeFlag == 0{
+            EquM!.AddEquipment("test")
+        }else{
+            EquM!.AddControl("test")
+        }
+        refreshUI()
     }
     
     @IBAction func EquDelete(_ sender: UIButton) {
-        
+        if TypeFlag == 0{
+            EquM!.DeleteEquipment("test")
+        }else{
+            EquM!.DeleteContrl("test")
+        }
+        refreshUI()
     }
     
     @IBAction func EquAllocation(_ sender: UIButton) {
-        
+        EquM!.Allocation("test")
+        refreshUI()
     }
     
     @IBAction func EquCollection(_ sender: UIButton) {
-        
+        EquM!.Collection("test")
+        refreshUI()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        EquM = EquipmentManage()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func refreshUI(){
+        SDT.reloadData()
+        DCT.reloadData()
+        COCT.reloadData()
+        CHCT.reloadData()
+    }
 
 }
 
