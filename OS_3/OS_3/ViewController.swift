@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     var EquM:EquipmentManage?
     let cellTableIdentifier  = "CellTableIdentifier"
@@ -69,10 +69,19 @@ class ViewController: UIViewController,UITableViewDataSource {
         DCT.tableFooterView = UIView()
         CHCT.tableFooterView = UIView()
         COCT.tableFooterView = UIView()
-        SDT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
-        DCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
-        COCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
-        CHCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        let xib = UINib(nibName: "AllTableViewCell", bundle: nil)
+        SDT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        SDT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
+        SDT.rowHeight = 90
+        DCT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        DCT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
+        DCT.rowHeight = 90
+        COCT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        COCT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
+        COCT.rowHeight = 90
+        CHCT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        CHCT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
+        CHCT.rowHeight = 90
         // Do any additional setup after loading the view, typically from a nib.
     }
     func refreshUI(){
@@ -82,61 +91,59 @@ class ViewController: UIViewController,UITableViewDataSource {
         CHCT.reloadData()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView == SDT){
+       if(tableView == SDT){
             print("sdt count")
-            print("\(EquM!.DctList!.getSize())")
-            return EquM!.DctList!.getSize()
+        print("\(EquM!.DctList.getSize())")
+        return EquM!.DctList.getSize()
         }else if (tableView == DCT){
             print("dct count")
-            print("\(EquM!.DctList!.getSize())")
-            return EquM!.DctList!.getSize()
+        print("\(EquM!.DctList.getSize())")
+        return EquM!.DctList.getSize()
         }else if (tableView == COCT){
             print("coct count")
-            print("\(EquM!.CoctList!.getSize())")
-            return EquM!.CoctList!.getSize()
-        }else if (tableView == CHCT){
-            print("chct count")
-            print("\(EquM!.ChctList!.getSize())")
-            return EquM!.ChctList!.getSize()
+        print("\(EquM!.CoctList.getSize())")
+        return EquM!.CoctList.getSize()
         }else{
-            return 0
+            print("chct count")
+        print("\(EquM!.ChctList.getSize())")
+        return EquM!.ChctList.getSize()
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == DCT){
             print("dct value")
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
-            let rowData = EquM!.DctList!.get(indexPath.row)
-            cell.name = rowData!.name
-            cell.state = "\(rowData!.state!)"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
+          //  let rowData = EquM!.DctList.get(indexPath.row)
+           // print("\(rowData!.name)")
+           // print("\(rowData!.state!)")
+          //  cell.name  = "\(rowData!.name)"
+           // cell.state = "\(rowData!.state!)"
+            print ("prepare return dct  ")
             return cell
-        }
-        if(tableView == SDT){
+        }else if(tableView == SDT){
             print("sdt value")
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
-            let rowData = EquM!.DctList?.get(indexPath.row)
-            cell.name = rowData!.name
-            cell.state = "\(rowData!.state!)"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
+            //let rowData = EquM!.DctList.get(indexPath.row)
+            //cell.name  = "\(rowData!.name)"
+            //cell.state = "\(rowData!.state!)"
+            print ("prepare return sdt ")
             return cell
-        }
-        if(tableView == COCT){
+        }else if(tableView == COCT){
             print("coct value")
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
-            let rowData = EquM!.CoctList?.get(indexPath.row)
-            cell.name = rowData!.name
-            cell.state = "\(rowData!.state!)"
-            return cell
-        }
-        if(tableView == CHCT){
-            print("chct value")
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
-            let rowData = EquM!.ChctList?.get(indexPath.row)
-            cell.name = rowData!.name
-            cell.state = "\(rowData!.state!)"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
+           // let rowData = EquM!.CoctList.get(indexPath.row)
+            //cell.name  = "\(rowData!.name)"
+            //cell.state = "\(rowData!.state!)"
+             print ("prepare return coct ")
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            print("chct value")
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
+           // let rowData = EquM!.ChctList.get(indexPath.row)
+           // cell.name = "\(rowData!.name)"
+            //cell.state = "\(rowData!.state!)"
+             print ("prepare return chct ")
             return cell
         }
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2296752180AE91003CEF74 /* AllTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2296742180AE91003CEF74 /* AllTableCell.swift */; };
 		BF2901DC21807B58000B25B8 /* LIstNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DB21807B58000B25B8 /* LIstNode.swift */; };
 		BF2901DE21807DB9000B25B8 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DD21807DB9000B25B8 /* List.swift */; };
 		BF2901E0218086E2000B25B8 /* EquipmentManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DF218086E2000B25B8 /* EquipmentManage.swift */; };
@@ -16,10 +15,11 @@
 		BF3FDAEC217B64D300D8B264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDAEA217B64D300D8B264 /* Main.storyboard */; };
 		BF3FDAEE217B64D600D8B264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDAED217B64D600D8B264 /* Assets.xcassets */; };
 		BF3FDAF1217B64D600D8B264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDAEF217B64D600D8B264 /* LaunchScreen.storyboard */; };
+		BF6DA98C2181D897008DD9A1 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */; };
+		BF6DA98D2181D897008DD9A1 /* AllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF2296742180AE91003CEF74 /* AllTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableCell.swift; sourceTree = "<group>"; };
 		BF2901DB21807B58000B25B8 /* LIstNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIstNode.swift; sourceTree = "<group>"; };
 		BF2901DD21807DB9000B25B8 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		BF2901DF218086E2000B25B8 /* EquipmentManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManage.swift; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		BF3FDAED217B64D600D8B264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF3FDAF0217B64D600D8B264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF3FDAF2217B64D600D8B264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 			children = (
 				BF3FDAE6217B64D300D8B264 /* AppDelegate.swift */,
 				BF3FDAE8217B64D300D8B264 /* ViewController.swift */,
-				BF2296742180AE91003CEF74 /* AllTableCell.swift */,
+				BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */,
+				BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */,
 				BF3FDAEA217B64D300D8B264 /* Main.storyboard */,
 				BF3FDAED217B64D600D8B264 /* Assets.xcassets */,
 				BF3FDAEF217B64D600D8B264 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3FDAF1217B64D600D8B264 /* LaunchScreen.storyboard in Resources */,
+				BF6DA98D2181D897008DD9A1 /* AllTableViewCell.xib in Resources */,
 				BF3FDAEE217B64D600D8B264 /* Assets.xcassets in Resources */,
 				BF3FDAEC217B64D300D8B264 /* Main.storyboard in Resources */,
 			);
@@ -148,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2901E0218086E2000B25B8 /* EquipmentManage.swift in Sources */,
+				BF6DA98C2181D897008DD9A1 /* AllTableViewCell.swift in Sources */,
 				BF2901DC21807B58000B25B8 /* LIstNode.swift in Sources */,
-				BF2296752180AE91003CEF74 /* AllTableCell.swift in Sources */,
 				BF2901DE21807DB9000B25B8 /* List.swift in Sources */,
 				BF3FDAE9217B64D300D8B264 /* ViewController.swift in Sources */,
 				BF3FDAE7217B64D300D8B264 /* AppDelegate.swift in Sources */,

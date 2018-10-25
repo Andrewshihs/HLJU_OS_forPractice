@@ -12,7 +12,7 @@ class ListNode {
     var state: Int?
     var next: ListNode?
     var parent: ListNode?
-    var queue = [Int]()  
+    var queue = [Int]()
     init(_ name: String ){
         self.name = name
         self.state = 0
@@ -20,7 +20,6 @@ class ListNode {
         self.parent = nil
     }
     init(){
-        print("list init")
         self.name = "Empty"
         self.state = 0
         self.next = nil
