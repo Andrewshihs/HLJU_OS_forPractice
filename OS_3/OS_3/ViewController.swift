@@ -10,10 +10,9 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource {
     
-    
-    
     var EquM:EquipmentManage?
     let cellTableIdentifier  = "CellTableIdentifier"
+    
     @IBOutlet weak var SDT: UITableView!
     @IBOutlet weak var DCT: UITableView!
     @IBOutlet weak var COCT: UITableView!
@@ -27,8 +26,10 @@ class ViewController: UIViewController,UITableViewDataSource {
     @IBAction func EquipmentSwitch(_ sender: UISwitch) {
         if TypeSwitch.isOn{
             TypeFlag = 0
+            EquipmentType.text = "设备"
         }else{
             TypeFlag = 1
+            EquipmentType.text = "控制器"
         }
     }
     
@@ -64,6 +65,10 @@ class ViewController: UIViewController,UITableViewDataSource {
         super.viewDidLoad()
         EquM = EquipmentManage()
         EquM!.second_init()
+        SDT.tableFooterView = UIView()
+        DCT.tableFooterView = UIView()
+        CHCT.tableFooterView = UIView()
+        COCT.tableFooterView = UIView()
         SDT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
         DCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
         COCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
@@ -78,13 +83,21 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == SDT){
-            return EquM?.DctList?.count() ?? 0
+            print("sdt count")
+            print("\(EquM!.DctList!.getSize())")
+            return EquM!.DctList!.getSize()
         }else if (tableView == DCT){
-            return EquM?.DctList?.count() ?? 0
+            print("dct count")
+            print("\(EquM!.DctList!.getSize())")
+            return EquM!.DctList!.getSize()
         }else if (tableView == COCT){
-            return EquM?.CoctList?.count() ?? 0
+            print("coct count")
+            print("\(EquM!.CoctList!.getSize())")
+            return EquM!.CoctList!.getSize()
         }else if (tableView == CHCT){
-            return EquM?.ChctList?.count() ?? 0
+            print("chct count")
+            print("\(EquM!.ChctList!.getSize())")
+            return EquM!.ChctList!.getSize()
         }else{
             return 0
         }
@@ -92,13 +105,15 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == DCT){
+            print("dct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
-            let rowData = EquM!.DctList?.get(indexPath.row)
+            let rowData = EquM!.DctList!.get(indexPath.row)
             cell.name = rowData!.name
             cell.state = "\(rowData!.state!)"
             return cell
         }
         if(tableView == SDT){
+            print("sdt value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
             let rowData = EquM!.DctList?.get(indexPath.row)
             cell.name = rowData!.name
@@ -106,6 +121,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             return cell
         }
         if(tableView == COCT){
+            print("coct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
             let rowData = EquM!.CoctList?.get(indexPath.row)
             cell.name = rowData!.name
@@ -113,6 +129,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             return cell
         }
         if(tableView == CHCT){
+            print("chct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
             let rowData = EquM!.ChctList?.get(indexPath.row)
             cell.name = rowData!.name

@@ -12,7 +12,7 @@ class ListNode {
     var state: Int?
     var next: ListNode?
     var parent: ListNode?
-    var queue = [Int]()
+    var queue = [Int]()  
     init(_ name: String ){
         self.name = name
         self.state = 0

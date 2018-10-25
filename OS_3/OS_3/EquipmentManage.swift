@@ -17,7 +17,7 @@ class EquipmentManage  {
         CoctList = List()
         ChctList = List()
     }
-    func second_init(){/*
+    func second_init(){
         DctList!.appendToTail("KeyBoard")
         DctList!.appendToTail("Mouse")
         DctList!.appendToTail("Print")
@@ -28,23 +28,14 @@ class EquipmentManage  {
         CoctList!.appendToTail("Contrl Three ")
         
         ChctList!.appendToTail("Channel One")
-        ChctList!.appendToTail("Channel Two")*/
-        DctList!.appendToHead("KeyBoard")
-        DctList!.appendToHead("Mouse")
-        DctList!.appendToHead("Print")
-        DctList!.appendToHead("Screen")
+        ChctList!.appendToTail("Channel Two")
         
-        CoctList!.appendToHead("Contrl One ")
-        CoctList!.appendToHead("Contrl Two ")
-        CoctList!.appendToHead("Contrl Three ")
-        
-        ChctList!.appendToHead("Channel One")
-        ChctList!.appendToHead("Channel Two")
+
         DctList!.display()
-        ChctList?.display()
-        CoctList?.display()
+        CoctList!.display()
+        ChctList!.display()
         print("second init")
-    /*
+    
         DctList!.head!.parent = CoctList!.head
         DctList!.head!.next!.parent = CoctList!.head
         DctList!.head!.next!.next!.parent = CoctList!.head!.next!
@@ -56,7 +47,7 @@ class EquipmentManage  {
         
         ChctList!.head!.parent = nil
         ChctList!.head!.next!.parent = nil
-*/
+
     }
     
     func AddEquipment (_ name: String){
