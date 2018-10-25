@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2296752180AE91003CEF74 /* AllTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2296742180AE91003CEF74 /* AllTableCell.swift */; };
 		BF2901DC21807B58000B25B8 /* LIstNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DB21807B58000B25B8 /* LIstNode.swift */; };
 		BF2901DE21807DB9000B25B8 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DD21807DB9000B25B8 /* List.swift */; };
 		BF2901E0218086E2000B25B8 /* EquipmentManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2901DF218086E2000B25B8 /* EquipmentManage.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2296742180AE91003CEF74 /* AllTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableCell.swift; sourceTree = "<group>"; };
 		BF2901DB21807B58000B25B8 /* LIstNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIstNode.swift; sourceTree = "<group>"; };
 		BF2901DD21807DB9000B25B8 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		BF2901DF218086E2000B25B8 /* EquipmentManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentManage.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				BF3FDAE6217B64D300D8B264 /* AppDelegate.swift */,
 				BF3FDAE8217B64D300D8B264 /* ViewController.swift */,
+				BF2296742180AE91003CEF74 /* AllTableCell.swift */,
 				BF3FDAEA217B64D300D8B264 /* Main.storyboard */,
 				BF3FDAED217B64D600D8B264 /* Assets.xcassets */,
 				BF3FDAEF217B64D600D8B264 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				BF2901E0218086E2000B25B8 /* EquipmentManage.swift in Sources */,
 				BF2901DC21807B58000B25B8 /* LIstNode.swift in Sources */,
+				BF2296752180AE91003CEF74 /* AllTableCell.swift in Sources */,
 				BF2901DE21807DB9000B25B8 /* List.swift in Sources */,
 				BF3FDAE9217B64D300D8B264 /* ViewController.swift in Sources */,
 				BF3FDAE7217B64D300D8B264 /* AppDelegate.swift in Sources */,

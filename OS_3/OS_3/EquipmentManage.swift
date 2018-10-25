@@ -12,11 +12,12 @@ class EquipmentManage  {
     var CoctList: List?
     var ChctList: List?
     init() {
+        print("Equ init")
         DctList = List()
         CoctList = List()
         ChctList = List()
     }
-    func second_init(){
+    func second_init(){/*
         DctList!.appendToTail("KeyBoard")
         DctList!.appendToTail("Mouse")
         DctList!.appendToTail("Print")
@@ -27,12 +28,27 @@ class EquipmentManage  {
         CoctList!.appendToTail("Contrl Three ")
         
         ChctList!.appendToTail("Channel One")
-        ChctList!.appendToTail("Channel Two")
+        ChctList!.appendToTail("Channel Two")*/
+        DctList!.appendToHead("KeyBoard")
+        DctList!.appendToHead("Mouse")
+        DctList!.appendToHead("Print")
+        DctList!.appendToHead("Screen")
         
+        CoctList!.appendToHead("Contrl One ")
+        CoctList!.appendToHead("Contrl Two ")
+        CoctList!.appendToHead("Contrl Three ")
+        
+        ChctList!.appendToHead("Channel One")
+        ChctList!.appendToHead("Channel Two")
+        DctList!.display()
+        ChctList?.display()
+        CoctList?.display()
+        print("second init")
+    /*
         DctList!.head!.parent = CoctList!.head
-        DctList!.head!.next = CoctList!.head
-        DctList!.head!.next!.next! = CoctList!.head!.next!
-        DctList!.head!.next!.next!.next = CoctList!.head!.next!.next!
+        DctList!.head!.next!.parent = CoctList!.head
+        DctList!.head!.next!.next!.parent = CoctList!.head!.next!
+        DctList!.head!.next!.next!.next!.parent = CoctList!.head!.next!.next!
         
         CoctList!.head?.parent = ChctList!.head
         CoctList!.head!.next!.parent = ChctList!.head
@@ -40,6 +56,7 @@ class EquipmentManage  {
         
         ChctList!.head!.parent = nil
         ChctList!.head!.next!.parent = nil
+*/
     }
     
     func AddEquipment (_ name: String){

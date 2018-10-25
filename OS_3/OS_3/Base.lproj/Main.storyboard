@@ -36,6 +36,11 @@
                                 <rect key="frame" x="182" y="65" width="142" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TE1-Q5-8lq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GEt-Qj-VVZ"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="PAn-LY-pBK"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SDT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy0-LL-1hB">
                                 <rect key="frame" x="49" y="36" width="33" height="21"/>

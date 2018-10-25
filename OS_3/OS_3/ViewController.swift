@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource {
+    
+    
     
     var EquM:EquipmentManage?
+    let cellTableIdentifier  = "CellTableIdentifier"
     @IBOutlet weak var SDT: UITableView!
     @IBOutlet weak var DCT: UITableView!
     @IBOutlet weak var COCT: UITableView!
@@ -60,6 +63,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         EquM = EquipmentManage()
+        EquM!.second_init()
+        SDT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        DCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        COCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
+        CHCT.register(AllTableCell.self, forCellReuseIdentifier: cellTableIdentifier)
         // Do any additional setup after loading the view, typically from a nib.
     }
     func refreshUI(){
@@ -68,6 +76,52 @@ class ViewController: UIViewController {
         COCT.reloadData()
         CHCT.reloadData()
     }
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(tableView == SDT){
+            return EquM?.DctList?.count() ?? 0
+        }else if (tableView == DCT){
+            return EquM?.DctList?.count() ?? 0
+        }else if (tableView == COCT){
+            return EquM?.CoctList?.count() ?? 0
+        }else if (tableView == CHCT){
+            return EquM?.ChctList?.count() ?? 0
+        }else{
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(tableView == DCT){
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            let rowData = EquM!.DctList?.get(indexPath.row)
+            cell.name = rowData!.name
+            cell.state = "\(rowData!.state!)"
+            return cell
+        }
+        if(tableView == SDT){
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            let rowData = EquM!.DctList?.get(indexPath.row)
+            cell.name = rowData!.name
+            cell.state = "\(rowData!.state!)"
+            return cell
+        }
+        if(tableView == COCT){
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            let rowData = EquM!.CoctList?.get(indexPath.row)
+            cell.name = rowData!.name
+            cell.state = "\(rowData!.state!)"
+            return cell
+        }
+        if(tableView == CHCT){
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            let rowData = EquM!.ChctList?.get(indexPath.row)
+            cell.name = rowData!.name
+            cell.state = "\(rowData!.state!)"
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableCell
+            return cell
+        }
+    }
 }
 
