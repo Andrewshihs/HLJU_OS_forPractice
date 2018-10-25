@@ -42,17 +42,9 @@ class List {
         return size
     }
     func get(_ Postion: Int) -> ListNode? {
-        var flag = 0
-        var count = 0
         var tmp = head
-        while flag == 0 {
-            if (tmp != nil ){
-                tmp = tmp!.next
-                count += 1
-            }
-            if(count == Postion){
-                flag = 1
-            }
+        for _ in 0...Postion{
+            tmp = tmp!.next
         }
         return tmp
     }

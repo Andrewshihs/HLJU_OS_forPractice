@@ -114,12 +114,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         if(tableView == DCT){
             print("dct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-          //  let rowData = EquM!.DctList.get(indexPath.row)
-           // print("\(rowData!.name)")
-           // print("\(rowData!.state!)")
-          //  cell.name  = "\(rowData!.name)"
-           // cell.state = "\(rowData!.state!)"
-            print ("prepare return dct  ")
+            print("\(indexPath.row)")
+            if(indexPath.row < 4){
+            let rowData = EquM!.DctList.get(indexPath.row)
+            cell.name  = "\(rowData!.name)"
+            cell.state = "\(rowData!.state!)"
+            let pp = rowData!.parent!.name
+            cell.parent = "\(pp)"
+            cell.queue = " "
+            }
+            //print ("prepare return dct  ")
             return cell
         }else if(tableView == SDT){
             print("sdt value")

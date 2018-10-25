@@ -20,21 +20,21 @@ class AllTableViewCell: UITableViewCell {
     var state: String = ""{
         didSet{
             if(state != oldValue){
-                stateLabel.text  = name
+                stateLabel.text  = state
             }
         }
     }
     var parent:String = ""{
         didSet{
             if(parent != oldValue){
-                parentLabel.text  = name
+                parentLabel.text  = parent
             }
         }
     }
     var queue:String = ""{
         didSet{
             if(queue != oldValue){
-                queueLabel.text  = name
+                queueLabel.text  = queue
             }
         }
     }
