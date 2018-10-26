@@ -42,6 +42,10 @@ class AllTableViewCell: UITableViewCell {
     @IBOutlet weak var parentLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var la2: UILabel!
+    @IBOutlet weak var la3: UILabel!
+    @IBOutlet weak var la4: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -42,9 +42,23 @@ class List {
         return size
     }
     func get(_ Postion: Int) -> ListNode? {
+       /* var tmp = head
+        if(Postion != 0){
+            for _ in 0...Postion{
+                tmp = tmp!.next
+            }
+        }*/
+        var flag = 0
         var tmp = head
-        for _ in 0...Postion{
-            tmp = tmp!.next
+        var count = 0
+        while (flag == 0 && count != Postion){
+            if (tmp == nil ){
+                print("nil")
+                flag = 1
+            }else{
+                tmp = tmp!.next
+                count += 1
+            }
         }
         return tmp
     }
@@ -56,9 +70,9 @@ class List {
             if (tmp == nil ){
                     print("nil")
                     flag = 1
-                }else{
+            }else{
                     print("hhh  \(tmp!.name)")
-                tmp = tmp!.next
+                    tmp = tmp!.next
             }
         }
     }

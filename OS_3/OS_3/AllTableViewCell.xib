@@ -98,6 +98,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="la2" destination="TQW-PL-7Na" id="bdl-6J-sNr"/>
+                <outlet property="la3" destination="f38-A3-yAk" id="Wsv-XS-Tln"/>
+                <outlet property="la4" destination="2LM-Tz-Qfe" id="gd0-B7-Oo8"/>
                 <outlet property="nameLabel" destination="7md-kc-4Ae" id="uGs-37-5XT"/>
                 <outlet property="parentLabel" destination="LP3-x8-ILJ" id="Lgl-tt-ohy"/>
                 <outlet property="queueLabel" destination="Gfy-04-GNO" id="u1K-hJ-U3R"/>

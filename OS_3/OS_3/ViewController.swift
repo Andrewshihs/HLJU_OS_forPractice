@@ -114,39 +114,45 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         if(tableView == DCT){
             print("dct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-            print("\(indexPath.row)")
-            if(indexPath.row < 4){
             let rowData = EquM!.DctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
             cell.state = "\(rowData!.state!)"
             let pp = rowData!.parent!.name
             cell.parent = "\(pp)"
             cell.queue = " "
-            }
-            //print ("prepare return dct  ")
             return cell
         }else if(tableView == SDT){
             print("sdt value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-            //let rowData = EquM!.DctList.get(indexPath.row)
-            //cell.name  = "\(rowData!.name)"
-            //cell.state = "\(rowData!.state!)"
+            let rowData = EquM!.DctList.get(indexPath.row)
+            cell.name  = "\(rowData!.name)"
+            cell.state = " "
+            cell.parent = " "
+            cell.la2.text = ""
+            cell.la3.text = ""
+            cell.la4.text = ""
+            cell.parent = ""
+            cell.queue = " "
             print ("prepare return sdt ")
             return cell
         }else if(tableView == COCT){
             print("coct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-           // let rowData = EquM!.CoctList.get(indexPath.row)
-            //cell.name  = "\(rowData!.name)"
-            //cell.state = "\(rowData!.state!)"
+            let rowData = EquM!.CoctList.get(indexPath.row)
+            cell.name  = "\(rowData!.name)"
+            cell.state = "\(rowData!.state!)"
+            let pp = rowData!.parent!.name
+            cell.parent = "\(pp)"
+            cell.queue = " "
              print ("prepare return coct ")
             return cell
         }else{
             print("chct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-           // let rowData = EquM!.ChctList.get(indexPath.row)
-           // cell.name = "\(rowData!.name)"
-            //cell.state = "\(rowData!.state!)"
+            let rowData = EquM!.ChctList.get(indexPath.row)
+            cell.name  = "\(rowData!.name)"
+            cell.state = "\(rowData!.state!)"
+            cell.queue = " "
              print ("prepare return chct ")
             return cell
         }
