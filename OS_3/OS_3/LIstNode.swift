@@ -13,7 +13,7 @@ class ListNode {
     var euqType: String?
     var next: ListNode?
     var parent: ListNode?
-    var queue = [Int]()
+    var queue = [String]()
     init(_ name: String ){
         self.name = name
         self.state = 0

@@ -88,8 +88,21 @@ class EquipmentManage  {
         }
     }
     //分配
-    func  Allocation(_ name: String){
-        
+    func  Allocation(_ Pname: String,_ Dname:String) -> String{
+        var back = DctList.find(Dname)
+        print(back!.name)
+        if(back!.name == "Empty"){
+            return "设备不存在"
+        }
+        print("\(back!.state!)")
+        if(back!.state! != 0 ){
+            back!.queue.append(Pname)
+            print("ook")
+            return "设备被占用，加入队列等待"
+        }else{
+            back!.state = 1
+        }
+        return ""
     }
     //回收
     func Collection(_ name: String){

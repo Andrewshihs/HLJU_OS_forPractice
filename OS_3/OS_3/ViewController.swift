@@ -66,9 +66,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     @IBAction func EquAllocation(_ sender: UIButton) {
-        let equName = InputText.text!
-        EquM!.Allocation(equName)
-        InputText.text = ""
+        let proessName = InputText.text!
+        let equName = InputText2.text!
+        let sta = EquM!.Allocation(proessName,equName)
+        InputText.text = sta
+        InputText2.text = ""
         refreshUI()
     }
     
@@ -127,7 +129,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.state = "\(rowData!.state!)"
             let pp = rowData!.parent?.name ?? " " 
             cell.parent = "\(pp)"
-            cell.queue = " "
+            var q = ""
+            if(rowData!.queue.count > 0){
+                print("shuzuz")
+                for i in 0..<rowData!.queue.count{
+                    q += rowData!.queue[i] + " " }
+                cell.queue = q
+            }
+            cell.queue = ""
             return cell
         }else if(tableView == SDT){
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
@@ -148,6 +157,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.state = "\(rowData!.state!)"
             let pp = rowData!.parent!.name
             cell.parent = "\(pp)"
+            var q = ""
+            if(rowData!.queue.count > 0){
+                print("shuzuz")
+                for i in 0..<rowData!.queue.count{
+                    q += rowData!.queue[i] + " " }
+                cell.queue = q
+            }
             cell.queue = " "
             return cell
         }else{
@@ -157,6 +173,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.state = "\(rowData!.state!)"
             cell.queue = " "
             cell.la3.text = ""
+            var q = ""
+            if(rowData!.queue.count > 0){
+                print("shuzuz")
+                for i in 0..<rowData!.queue.count{
+                    q += rowData!.queue[i] + " " }
+                cell.queue = q
+            }
             cell.parent = " "
             return cell
         }

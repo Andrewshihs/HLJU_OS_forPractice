@@ -56,6 +56,25 @@ class List {
         }
         return tmp
     }
+    func find(_ name: String ) -> ListNode?{
+        var flag = 0
+        var tmp = head
+        var back = ListNode()
+        if(head!.name == name){
+            back = tmp!
+        }
+        while flag == 0{
+            if (tmp == nil ){
+                flag = 1
+            }else{
+                if( tmp!.name == name ){
+                    back = tmp!
+                }
+                tmp = tmp!.next
+            }
+        }
+        return back
+    }
     func setType(_ eType: String ){
         tail!.euqType = eType
     }
@@ -111,6 +130,7 @@ class List {
         }
         return 0 
     }
+
     func display()  {
         var flag = 0
         var tmp = head
