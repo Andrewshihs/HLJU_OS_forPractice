@@ -61,9 +61,9 @@ class List {
         var rflag = 2
         if(head!.name == name){
             if(head!.state == 0){
-            head = head!.next
-            size -= 1
-            rflag = 0
+                head = head!.next
+                size -= 1
+                rflag = 0
             }else{
                 print("sss")
                 rflag =  1
@@ -78,7 +78,7 @@ class List {
                 }else{
                     print(tmp!.next!.name)
                     if(tmp!.next!.name == name ){
-                        if(tmp!.state != 0){
+                        if(tmp!.state == 0){
                             tmp!.next = tmp!.next?.next
                             size -= 1
                             rflag = 0
