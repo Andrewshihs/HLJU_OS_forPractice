@@ -23,9 +23,9 @@ class EquipmentManage  {
         DctList.appendToTail("Print")
         DctList.appendToTail("Screen")
         
-        CoctList.appendToTail("ContrlOne ")
-        CoctList.appendToTail("ContrlTwo ")
-        CoctList.appendToTail("ContrlThree ")
+        CoctList.appendToTail("ContrlOne")
+        CoctList.appendToTail("ContrlTwo")
+        CoctList.appendToTail("ContrlThree")
         
         ChctList.appendToTail("ChannelOne")
         ChctList.appendToTail("ChannelTwo")
