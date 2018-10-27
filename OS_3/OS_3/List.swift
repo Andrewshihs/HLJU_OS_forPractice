@@ -56,6 +56,9 @@ class List {
         }
         return tmp
     }
+    func setType(_ eType: String ){
+        tail!.euqType = eType
+    }
     func delete(_ name:String ) -> Int{
         var tmp = head
         var rflag = 2
@@ -100,7 +103,7 @@ class List {
             if (tmp == nil ){
                 flag = 1
             }else{
-                if(tmp!.name == name ){
+                if(tmp!.parent!.name == name ){
                     return 1
                 }
                 tmp = tmp!.next
@@ -109,15 +112,12 @@ class List {
         return 0 
     }
     func display()  {
-       // print("display")
         var flag = 0
         var tmp = head
         while flag == 0{
             if (tmp == nil ){
-                   // print("nil")
                     flag = 1
             }else{
-                  //  print("hhh  \(tmp!.name)")
                     tmp = tmp!.next
             }
         }

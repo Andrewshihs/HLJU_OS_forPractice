@@ -19,9 +19,13 @@ class EquipmentManage  {
     }
     func second_init(){
         DctList.appendToTail("KeyBoard")
+        DctList.setType("In")
         DctList.appendToTail("Mouse")
+        DctList.setType("In")
         DctList.appendToTail("Print")
+        DctList.setType("Out")
         DctList.appendToTail("Screen")
+        DctList.setType("Out")
         
         CoctList.appendToTail("ContrlOne")
         CoctList.appendToTail("ContrlTwo")
@@ -52,6 +56,7 @@ class EquipmentManage  {
     
     func AddEquipment (_ name: String, _ pos: Int ){
         DctList.appendToTail(name)
+        DctList.setType("In")
         DctList.tail!.parent = CoctList.get(pos)
     }
     func AddControl (_ name: String, _ pos: Int){
@@ -71,7 +76,7 @@ class EquipmentManage  {
     func DeleteContrl(_ name: String ) -> String{
         if(DctList.findParent(name) != 0){
             print("检查 ")
-           return "控制器占用"
+            return "控制器占用"
         }
         let  sta = CoctList.delete(name)
         if(sta == 1){

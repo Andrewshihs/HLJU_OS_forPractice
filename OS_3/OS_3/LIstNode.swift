@@ -10,6 +10,7 @@ import Foundation
 class ListNode {
     var name = ""
     var state: Int?
+    var euqType: String?
     var next: ListNode?
     var parent: ListNode?
     var queue = [Int]()
@@ -17,12 +18,14 @@ class ListNode {
         self.name = name
         self.state = 0
         self.next = nil
+        self.euqType = ""
         self.parent = nil
     }
     init(){
         self.name = "Empty"
         self.state = 0
         self.next = nil
+        self.euqType = ""
         self.parent = nil
     }
     

@@ -109,27 +109,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if(tableView == SDT){
-            print("sdt count")
-        print("\(EquM!.DctList.getSize())")
         return EquM!.DctList.getSize()
         }else if (tableView == DCT){
-            print("dct count")
-        print("\(EquM!.DctList.getSize())")
         return EquM!.DctList.getSize()
         }else if (tableView == COCT){
-            print("coct count")
-        print("\(EquM!.CoctList.getSize())")
         return EquM!.CoctList.getSize()
         }else{
-            print("chct count")
-        print("\(EquM!.ChctList.getSize())")
         return EquM!.ChctList.getSize()
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == DCT){
-            print("dct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
             let rowData = EquM!.DctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
@@ -139,7 +130,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.queue = " "
             return cell
         }else if(tableView == SDT){
-            print("sdt value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
             let rowData = EquM!.DctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
@@ -150,10 +140,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.la4.text = ""
             cell.parent = ""
             cell.queue = " "
-            print ("prepare return sdt ")
             return cell
         }else if(tableView == COCT){
-            print("coct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
             let rowData = EquM!.CoctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
@@ -161,10 +149,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let pp = rowData!.parent!.name
             cell.parent = "\(pp)"
             cell.queue = " "
-             print ("prepare return coct ")
             return cell
         }else{
-            print("chct value")
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
             let rowData = EquM!.ChctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
@@ -172,7 +158,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.queue = " "
             cell.la3.text = ""
             cell.parent = " "
-            print ("prepare return chct ")
             return cell
         }
     }
