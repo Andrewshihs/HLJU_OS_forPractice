@@ -18,7 +18,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var COCT: UITableView!
     @IBOutlet weak var CHCT: UITableView!
     @IBOutlet weak var EquipmentType: UILabel!
-    @IBOutlet weak var InpurtText: UITextField!
+    @IBOutlet weak var InputText: UITextField!
+    @IBOutlet weak var InputText2: UITextField!
     @IBOutlet weak var TypeSwitch: UISwitch!
     
     var TypeFlag = 0  //设备\控制器开关
@@ -36,29 +37,45 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func EquAdd(_ sender: UIButton) {
         
         if TypeFlag == 0{
-            EquM!.AddEquipment("test")
+                let equName = InputText.text!
+                let   conName = Int(InputText2.text!) ?? 0
+                EquM!.AddEquipment(equName,conName)
         }else{
-            EquM!.AddControl("test")
+            let conName = InputText.text!
+            let chName = Int(InputText2.text!) ?? 0
+            EquM!.AddControl(conName,chName)
         }
+        InputText.text = ""
+        InputText2.text = ""
         refreshUI()
     }
     
     @IBAction func EquDelete(_ sender: UIButton) {
+        var back = ""
         if TypeFlag == 0{
-            EquM!.DeleteEquipment("test")
+            let equName = InputText.text!
+            back = EquM!.DeleteEquipment(equName)
         }else{
-            EquM!.DeleteContrl("test")
+            let conName  = InputText.text!
+            back = EquM!.DeleteContrl(conName)
+            print(conName)
         }
+        InputText.text = back
+        InputText2.text = ""
         refreshUI()
     }
     
     @IBAction func EquAllocation(_ sender: UIButton) {
-        EquM!.Allocation("test")
+        let equName = InputText.text!
+        EquM!.Allocation(equName)
+        InputText.text = ""
         refreshUI()
     }
     
     @IBAction func EquCollection(_ sender: UIButton) {
-        EquM!.Collection("test")
+        let equName = InputText.text!
+        EquM!.Collection(equName)
+        InputText.text = ""
         refreshUI()
     }
     override func viewDidLoad() {
@@ -117,7 +134,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let rowData = EquM!.DctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
             cell.state = "\(rowData!.state!)"
-            let pp = rowData!.parent!.name
+            let pp = rowData!.parent?.name ?? " " 
             cell.parent = "\(pp)"
             cell.queue = " "
             return cell
@@ -153,7 +170,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.name  = "\(rowData!.name)"
             cell.state = "\(rowData!.state!)"
             cell.queue = " "
-             print ("prepare return chct ")
+            cell.la3.text = ""
+            cell.parent = " "
+            print ("prepare return chct ")
             return cell
         }
     }

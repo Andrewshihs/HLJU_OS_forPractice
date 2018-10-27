@@ -23,7 +23,7 @@ class List {
             tail = temp
             size += 1
         }
-        print(" add tail sucess")
+      //  print(" add tail sucess")
     }
     func appendToHead(_ name: String ){
         let temp = ListNode(name)
@@ -36,18 +36,12 @@ class List {
             head = temp
             size += 1
         }
-        print(" add head sucess")
+       // print(" add head sucess")
     }
     func getSize() -> Int {
         return size
     }
     func get(_ Postion: Int) -> ListNode? {
-       /* var tmp = head
-        if(Postion != 0){
-            for _ in 0...Postion{
-                tmp = tmp!.next
-            }
-        }*/
         var flag = 0
         var tmp = head
         var count = 0
@@ -62,16 +56,68 @@ class List {
         }
         return tmp
     }
-    func display()  {
-        print("display")
+    func delete(_ name:String ) -> Int{
+        var tmp = head
+        var rflag = 2
+        if(head!.name == name){
+            if(head!.state == 0){
+            head = head!.next
+            size -= 1
+            rflag = 0
+            }else{
+                print("sss")
+                rflag =  1
+            }
+        }else{
+            var flag = 0
+            while (flag == 0){
+                print(" ------")
+                if (tmp?.next == nil ){
+                    print("it is tail")
+                    flag = 1
+                }else{
+                    print(tmp!.next!.name)
+                    if(tmp!.next!.name == name ){
+                        if(tmp!.state != 0){
+                            tmp!.next = tmp!.next?.next
+                            size -= 1
+                            rflag = 0
+                        }else{
+                            print("ssr")
+                            rflag =  1
+                        }
+                    }
+                    tmp = tmp!.next
+                }
+            }
+        }
+        return rflag
+    }
+    func findParent(_ name:String ) -> Int {
         var flag = 0
         var tmp = head
         while flag == 0{
             if (tmp == nil ){
-                    print("nil")
+                flag = 1
+            }else{
+                if(tmp!.name == name ){
+                    return 1
+                }
+                tmp = tmp!.next
+            }
+        }
+        return 0 
+    }
+    func display()  {
+       // print("display")
+        var flag = 0
+        var tmp = head
+        while flag == 0{
+            if (tmp == nil ){
+                   // print("nil")
                     flag = 1
             }else{
-                    print("hhh  \(tmp!.name)")
+                  //  print("hhh  \(tmp!.name)")
                     tmp = tmp!.next
             }
         }

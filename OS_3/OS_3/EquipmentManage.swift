@@ -23,12 +23,12 @@ class EquipmentManage  {
         DctList.appendToTail("Print")
         DctList.appendToTail("Screen")
         
-        CoctList.appendToTail("Contrl One ")
-        CoctList.appendToTail("Contrl Two ")
-        CoctList.appendToTail("Contrl Three ")
+        CoctList.appendToTail("ContrlOne ")
+        CoctList.appendToTail("ContrlTwo ")
+        CoctList.appendToTail("ContrlThree ")
         
-        ChctList.appendToTail("Channel One")
-        ChctList.appendToTail("Channel Two")
+        ChctList.appendToTail("ChannelOne")
+        ChctList.appendToTail("ChannelTwo")
         
 
         DctList.display()
@@ -50,17 +50,37 @@ class EquipmentManage  {
         print("second init finish")
     }
     
-    func AddEquipment (_ name: String){
-        
+    func AddEquipment (_ name: String, _ pos: Int ){
+        DctList.appendToTail(name)
+        DctList.tail!.parent = CoctList.get(pos)
     }
-    func AddControl (_ name: String){
-        
+    func AddControl (_ name: String, _ pos: Int){
+        CoctList.appendToTail(name)
+        CoctList.tail!.parent = ChctList.get(pos)
     }
-    func DeleteEquipment(_ name: String ){
-        
+    func DeleteEquipment(_ name: String ) -> String{
+        let  sta = DctList.delete(name)
+        if(sta == 1){
+            return "设备占用"
+        }else if (sta == 2){
+            return "设备不存在"
+        }else{
+            return ""
+        }
     }
-    func DeleteContrl(_ name: String ){
-        
+    func DeleteContrl(_ name: String ) -> String{
+        if(DctList.findParent(name) != 0){
+            print("检查 ")
+           return "控制器占用"
+        }
+        let  sta = CoctList.delete(name)
+        if(sta == 1){
+            return "控制器占用"
+        }else if (sta == 2){
+            return "控制器不存在"
+        }else{
+            return ""
+        }
     }
     //分配
     func  Allocation(_ name: String){

@@ -114,13 +114,6 @@
                                     <action selector="EquCollection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfS-7H-iZB"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rE4-lD-HJK">
-                                <rect key="frame" x="360" y="596" width="273" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNn-FZ-krI">
                                 <rect key="frame" x="208" y="595" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,6 +135,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-lx-yV9">
+                                <rect key="frame" x="536" y="599" width="177" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rE4-lD-HJK">
+                                <rect key="frame" x="300" y="597" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -151,7 +158,8 @@
                         <outlet property="COCT" destination="2Lu-xb-tBc" id="KGG-zE-54C"/>
                         <outlet property="DCT" destination="yRR-OR-bQl" id="5Vr-lh-prd"/>
                         <outlet property="EquipmentType" destination="ie3-DS-aOW" id="ItD-2u-BTx"/>
-                        <outlet property="InpurtText" destination="rE4-lD-HJK" id="u5a-Hm-YLZ"/>
+                        <outlet property="InputText" destination="rE4-lD-HJK" id="kih-fZ-bZk"/>
+                        <outlet property="InputText2" destination="TU4-lx-yV9" id="CL2-19-EPr"/>
                         <outlet property="SDT" destination="pPl-I2-Dla" id="tPS-Lo-7RJ"/>
                         <outlet property="TypeSwitch" destination="hNn-FZ-krI" id="jcI-sk-Crf"/>
                     </connections>
