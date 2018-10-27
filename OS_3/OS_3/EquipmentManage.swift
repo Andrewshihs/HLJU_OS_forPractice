@@ -101,6 +101,20 @@ class EquipmentManage  {
             return "设备被占用，加入队列等待"
         }else{
             back!.state = 1
+            var cback = back!.parent
+            if(cback!.state! != 0){
+                cback!.queue.append(Pname)
+                return "控制器被占用,等待"
+            }else{
+                cback!.state = 1
+                var ccback = cback!.parent
+                if(ccback!.state! != 0){
+                    ccback!.queue.append(Pname)
+                    return "通道被占用,等待"
+                }else{
+                    ccback!.state = 1
+                }
+            }
         }
         return ""
     }
