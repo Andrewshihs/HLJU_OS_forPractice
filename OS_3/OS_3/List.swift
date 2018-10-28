@@ -99,6 +99,9 @@ class List {
                     if(tmp!.next!.name == name ){
                         if(tmp!.state == 0){
                             tmp!.next = tmp!.next?.next
+                            if(tmp!.next == nil){
+                                tail = tmp
+                            }
                             size -= 1
                             rflag = 0
                         }else{
