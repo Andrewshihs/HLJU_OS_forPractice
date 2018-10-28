@@ -131,12 +131,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.parent = "\(pp)"
             var q = ""
             if(rowData!.queue.count > 0){
-                print("shuzuz")
                 for i in 0..<rowData!.queue.count{
                     q += rowData!.queue[i] + " " }
                 cell.queue = q
+                print(cell.queue)
+            }else{
+                cell.queue = ""
             }
-            cell.queue = ""
             return cell
         }else if(tableView == SDT){
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
@@ -148,7 +149,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.la3.text = ""
             cell.la4.text = ""
             cell.parent = ""
-            cell.queue = " "
+            cell.queue = ""
             return cell
         }else if(tableView == COCT){
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
@@ -163,8 +164,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 for i in 0..<rowData!.queue.count{
                     q += rowData!.queue[i] + " " }
                 cell.queue = q
+            }else{
+                  cell.queue = " "
             }
-            cell.queue = " "
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
@@ -175,12 +177,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.la3.text = ""
             var q = ""
             if(rowData!.queue.count > 0){
-                print("shuzuz")
                 for i in 0..<rowData!.queue.count{
                     q += rowData!.queue[i] + " " }
-                cell.queue = q
+              cell.queue = q
+            }else{
+                cell.parent = " "
             }
-            cell.parent = " "
             return cell
         }
     }

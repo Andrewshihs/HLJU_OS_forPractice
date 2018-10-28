@@ -33,8 +33,8 @@ class AllTableViewCell: UITableViewCell {
     }
     var queue:String = ""{
         didSet{
-            if(queue != oldValue){
-                queueLabel.text  = queue
+                if(parent != oldValue){
+                    queueLabel.text  = queue
             }
         }
     }

@@ -12,7 +12,6 @@ class EquipmentManage  {
     var CoctList = List()
     var ChctList = List()
     init() {
-        print("Equ init")
         DctList = List()
         CoctList = List()
         ChctList = List()
@@ -33,12 +32,6 @@ class EquipmentManage  {
         
         ChctList.appendToTail("ChannelOne")
         ChctList.appendToTail("ChannelTwo")
-        
-
-        DctList.display()
-        CoctList.display()
-        ChctList.display()
-        print("second init")
     
         DctList.head!.parent = CoctList.head
         DctList.head!.next!.parent = CoctList.head
@@ -51,7 +44,6 @@ class EquipmentManage  {
         
         ChctList.head!.parent = nil
         ChctList.head!.next!.parent = nil
-        print("second init finish")
     }
     
     func AddEquipment (_ name: String, _ pos: Int ){
