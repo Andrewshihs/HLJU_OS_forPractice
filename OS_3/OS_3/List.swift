@@ -87,15 +87,12 @@ class List {
                 size -= 1
                 rflag = 0
             }else{
-                print("sss")
                 rflag =  1
             }
         }else{
             var flag = 0
             while (flag == 0){
-                print(" ------")
                 if (tmp?.next == nil ){
-                    print("it is tail")
                     flag = 1
                 }else{
                     print(tmp!.next!.name)
@@ -105,7 +102,6 @@ class List {
                             size -= 1
                             rflag = 0
                         }else{
-                            print("ssr")
                             rflag =  1
                         }
                     }
