@@ -12,7 +12,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     var EquM:EquipmentManage?
     let cellTableIdentifier  = "CellTableIdentifier"
-    
     @IBOutlet weak var SDT: UITableView!
     @IBOutlet weak var DCT: UITableView!
     @IBOutlet weak var COCT: UITableView!
@@ -89,9 +88,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         CHCT.tableFooterView = UIView()
         COCT.tableFooterView = UIView()
         let xib = UINib(nibName: "AllTableViewCell", bundle: nil)
+        let xibs = UINib(nibName: "ProCell", bundle: nil)
         SDT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
-        SDT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
-        SDT.rowHeight = 90
+        SDT.register(xibs, forCellReuseIdentifier: cellTableIdentifier)
+        SDT.rowHeight = 80
         DCT.register(AllTableViewCell.self, forCellReuseIdentifier: cellTableIdentifier)
         DCT.register(xib, forCellReuseIdentifier: cellTableIdentifier)
         DCT.rowHeight = 90
@@ -111,7 +111,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if(tableView == SDT){
-        return EquM!.DctList.getSize()
+        return EquM!.Pro.count
         }else if (tableView == DCT){
         return EquM!.DctList.getSize()
         }else if (tableView == COCT){
@@ -140,16 +140,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             }
             return cell
         }else if(tableView == SDT){
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell
-            let rowData = EquM!.DctList.get(indexPath.row)
-            cell.name  = "\(rowData!.name)"
-            cell.state = " "
-            cell.parent = " "
-            cell.la2.text = ""
-            cell.la3.text = ""
-            cell.la4.text = ""
-            cell.parent = ""
-            cell.queue = ""
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! ProCell
+            if(EquM!.Pro.count > 0){
+                let rowData = EquM!.Pro[indexPath.row]
+                cell.Proce  = rowData.Pname!
+                cell.dev = rowData.Ename!
+                cell.state.text = "\(rowData.State!) "
+            }
             return cell
         }else if(tableView == COCT){
             let cell = tableView.dequeueReusableCell(withIdentifier: cellTableIdentifier, for: indexPath) as! AllTableViewCell

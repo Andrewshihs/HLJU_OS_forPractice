@@ -17,6 +17,9 @@
 		BF3FDAF1217B64D600D8B264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3FDAEF217B64D600D8B264 /* LaunchScreen.storyboard */; };
 		BF6DA98C2181D897008DD9A1 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */; };
 		BF6DA98D2181D897008DD9A1 /* AllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */; };
+		BF9E465A21853F9A004512EC /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E465921853F9A004512EC /* Process.swift */; };
+		BF9E465D21854101004512EC /* ProCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9E465B21854101004512EC /* ProCell.swift */; };
+		BF9E465E21854101004512EC /* ProCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9E465C21854101004512EC /* ProCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		BF3FDAF2217B64D600D8B264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 		BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewCell.xib; sourceTree = "<group>"; };
+		BF9E465921853F9A004512EC /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		BF9E465B21854101004512EC /* ProCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCell.swift; sourceTree = "<group>"; };
+		BF9E465C21854101004512EC /* ProCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +73,12 @@
 				BF3FDAE6217B64D300D8B264 /* AppDelegate.swift */,
 				BF3FDAE8217B64D300D8B264 /* ViewController.swift */,
 				BF2901DF218086E2000B25B8 /* EquipmentManage.swift */,
+				BF9E465921853F9A004512EC /* Process.swift */,
 				BF2901DD21807DB9000B25B8 /* List.swift */,
 				BF2901DB21807B58000B25B8 /* LIstNode.swift */,
 				BF6DA98A2181D897008DD9A1 /* AllTableViewCell.swift */,
+				BF9E465B21854101004512EC /* ProCell.swift */,
+				BF9E465C21854101004512EC /* ProCell.xib */,
 				BF6DA98B2181D897008DD9A1 /* AllTableViewCell.xib */,
 				BF3FDAEA217B64D300D8B264 /* Main.storyboard */,
 				BF3FDAED217B64D600D8B264 /* Assets.xcassets */,
@@ -137,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9E465E21854101004512EC /* ProCell.xib in Resources */,
 				BF3FDAF1217B64D600D8B264 /* LaunchScreen.storyboard in Resources */,
 				BF6DA98D2181D897008DD9A1 /* AllTableViewCell.xib in Resources */,
 				BF3FDAEE217B64D600D8B264 /* Assets.xcassets in Resources */,
@@ -152,11 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2901E0218086E2000B25B8 /* EquipmentManage.swift in Sources */,
+				BF9E465D21854101004512EC /* ProCell.swift in Sources */,
 				BF6DA98C2181D897008DD9A1 /* AllTableViewCell.swift in Sources */,
 				BF2901DC21807B58000B25B8 /* LIstNode.swift in Sources */,
 				BF2901DE21807DB9000B25B8 /* List.swift in Sources */,
 				BF3FDAE9217B64D300D8B264 /* ViewController.swift in Sources */,
 				BF3FDAE7217B64D300D8B264 /* AppDelegate.swift in Sources */,
+				BF9E465A21853F9A004512EC /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

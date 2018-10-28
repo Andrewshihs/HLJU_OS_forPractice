@@ -11,6 +11,7 @@ class EquipmentManage  {
     var DctList = List()
     var CoctList = List()
     var ChctList = List()
+    var Pro = [Process]()
     init() {
         DctList = List()
         CoctList = List()
@@ -82,6 +83,7 @@ class EquipmentManage  {
     //分配
     func  Allocation(_ Pname: String,_ Dname:String) -> String{
         var back = DctList.find(Dname)
+        var tmpPro = Process(Pname,Dname)
         print(back!.name)
         if(back!.name == "Empty"){
             return "设备不存在"
@@ -89,25 +91,28 @@ class EquipmentManage  {
         print("\(back!.state!)")
         if(back!.state! != 0 ){
             back!.queue.append(Pname)
-            print("ook")
+            Pro.append(tmpPro)
             return "设备被占用，加入队列等待"
         }else{
             back!.state = 1
             var cback = back!.parent
             if(cback!.state! != 0){
                 cback!.queue.append(Pname)
+                Pro.append(tmpPro)
                 return "控制器被占用,等待"
             }else{
                 cback!.state = 1
                 var ccback = cback!.parent
                 if(ccback!.state! != 0){
                     ccback!.queue.append(Pname)
+                    Pro.append(tmpPro)
                     return "通道被占用,等待"
                 }else{
                     ccback!.state = 1
                 }
             }
         }
+        Pro.append(tmpPro)
         return ""
     }
     //回收
