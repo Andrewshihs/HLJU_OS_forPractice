@@ -16,4 +16,9 @@ class Process{
         self.Ename = Ena
         State =  1
     }
+    init(){
+        self.Pname = ""
+        self.Ename = ""
+        State =  0
+    }
 }

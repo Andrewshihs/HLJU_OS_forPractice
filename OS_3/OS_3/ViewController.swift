@@ -157,7 +157,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             cell.parent = "\(pp)"
             var q = ""
             if(rowData!.queue.count > 0){
-                print("shuzuz")
                 for i in 0..<rowData!.queue.count{
                     q += rowData!.queue[i] + " " }
                 cell.queue = q
@@ -170,15 +169,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let rowData = EquM!.ChctList.get(indexPath.row)
             cell.name  = "\(rowData!.name)"
             cell.state = "\(rowData!.state!)"
-            cell.queue = " "
+            //cell.queue = " "
             cell.la3.text = ""
             var q = ""
+            print("===============")
+            print(rowData!.queue.count)
             if(rowData!.queue.count > 0){
                 for i in 0..<rowData!.queue.count{
                     q += rowData!.queue[i] + " " }
               cell.queue = q
             }else{
-                cell.parent = " "
+                cell.queue = " "
             }
             return cell
         }

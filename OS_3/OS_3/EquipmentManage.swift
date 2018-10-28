@@ -104,8 +104,10 @@ class EquipmentManage  {
                 cback!.state = 1
                 var ccback = cback!.parent
                 if(ccback!.state! != 0){
-                    ccback!.queue.append(Pname)
                     Pro.append(tmpPro)
+                    ccback!.queue.append(Pname)
+                    print("-----------")
+                    print(ccback!.queue.count)
                     return "通道被占用,等待"
                 }else{
                     ccback!.state = 1
@@ -116,8 +118,47 @@ class EquipmentManage  {
         return ""
     }
     //回收
-    func Collection(_ name: String){
-        
+    func Collection(_ name: String)->String{
+        var tmp = Process()
+        var flag = 0
+        for i in 0..<Pro.count{
+            if(Pro[i].Pname! == name){
+                tmp = Pro[i]
+                flag = 1
+            }
+        }
+        if(flag == 0){
+            return "进程不存在"
+        }
+        let device = tmp.Ename!
+        var tmpdec = DctList.find(device)
+        if(tmpdec!.state != 0){
+            if(tmpdec!.queue.count > 0){
+                tmpdec!.queue.remove(at: 0)
+            }else{
+                tmpdec!.state = 0
+                var tmpcon = tmpdec!.parent
+                if(tmpcon!.state != 0){
+                    if(tmpcon!.queue.count > 0){
+                        tmpcon!.queue.remove(at: 0)
+                    }else{
+                        tmpcon!.state = 0
+                        var tmpcha = tmpcon!.parent
+                        if(tmpcha!.state != 0){
+                            if(tmpcha!.queue.count > 0){
+                                tmpcha!.queue.remove(at: 0)
+                            }else{
+                                tmpcha!.state = 0
+                            }
+                        }
+                    }
+                }else{
+                }
+            }
+            tmp.State = 0
+        }else{
+           return "进程未拥有设备"
+        }
+        return ""
     }
-    
 }
